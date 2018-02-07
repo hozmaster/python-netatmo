@@ -3,14 +3,6 @@
 from pprint import pprint
 import json
 
-payload = {'grant_type': 'password',
-           'username': '',
-           'password': '',
-           'client_id':"5a356b7d8c04c44aa48b487f",
-           'client_secret': "XlcZoyrevno5paVeN3EHVQCFwlKTcKgT9byPP",
-           'scope': 'read_station'}
-# try:
-
 data = json.load(open('config.json'))
 
 if data is not None:
