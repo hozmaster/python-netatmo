@@ -9,7 +9,7 @@
             "client_secret": ""
         },
         "station" : {
-            "type" : "weather", "sn" : "g00000", "name": "company" },
+            "type" : "weather", "sn" : "g00000", "name": "company" }
         },
         "modules" : {
             [ "type" : "indoor", "sn" : "i00000", "name" : "room 1"],

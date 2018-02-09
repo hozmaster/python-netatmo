@@ -1,9 +1,10 @@
 # This code sample uses requests (HTTP library)
-# import requests
+import requests
 from pprint import pprint
 import json
 
 data = json.load(open('config.json'))
+
 
 if data is not None:
     pprint(data)
@@ -25,7 +26,7 @@ if data is not None:
 
     print(payload)
 
-    # response = requests.post("https://api.netatmo.com/oauth2/token", data=payload)
+    response = requests.post("https://api.netatmo.com/oauth2/token", data=payload)
     # response.raise_for_status()
     # access_token=response.json()["access_token"]
     # refresh_token=response.json()["refresh_token"]
@@ -37,7 +38,7 @@ if data is not None:
     #
     # params = {
     #     'access_token': access_token,
-    #     'device_id': '70:ee:50:2b:2e:3a'
+    #     'device_id': '70:ee:XX:XX:XX:XX'
     # }
     # response = requests.post("https://api.netatmo.com/api/getstationsdata", params=params)
     # response.raise_for_status()
