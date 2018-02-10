@@ -15,18 +15,18 @@ if os.path.isfile(json_file):
         username = data['credentials']['username']
         password = data['credentials']['password']
 
-        netatmo = data['netatmo']
+        weather = data['weather']
 
         payload = {'grant_type': 'password',
                    'username': username,
                    'password': password,
-                   'client_id': netatmo['api']['client_id'],
-                   'client_secret': netatmo['api']['client_secret'],
+                   'client_id': weather['api']['client_id'],
+                   'client_secret': weather['api']['client_secret'],
                    'scope': 'read_station'}
 
         print(payload)
 
-        response = requests.post("https://api.netatmo.com/oauth2/token", data=payload)
+        # response = requests.post("https://api.netatmo.com/oauth2/token", data=payload)
 
         # response.raise_for_status()
         # access_token=response.json()["access_token"]
