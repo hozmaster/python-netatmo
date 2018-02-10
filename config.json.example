@@ -1,19 +1,28 @@
 {
-    "credentials" : {
-        "username" : "whatever",
-        "password" : "new_password"
-    },
-    "netatmo" : {
-        "api" : {
-            "client_id" : "",
-            "client_secret": ""
-        },
-        "station" : {
-            "type" : "weather", "sn" : "g00000", "name": "company" }
-        },
-        "modules" : {
-            [ "type" : "indoor", "sn" : "i00000", "name" : "room 1"],
-            [ "type" : "outdoor", "sn" : "h00000", "name" : "outdoor"],
-        }
-    }
+	"credentials": {
+		"username": "do_not_edit_this_file",
+		"password": "copy_this_file"
+	},
+	"weather": {
+		"api": {
+			"client_id": "",
+			"client_secret": ""
+		},
+		"station": {
+			"type": "weather",
+			"sn": "g00000",
+			"name": "company"
+		},
+		"modules": [{
+				"type": "indoor",
+				"sn": "i00000",
+				"name": "room 1"
+			},
+			{
+				"type": "outdoor",
+				"sn": "h00000",
+				"name": "outdoor 1"
+			}
+		]
+	}
 }
