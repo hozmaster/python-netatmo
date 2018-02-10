@@ -6,7 +6,7 @@ import os.path
 
 json_file = 'config.json'
 data = None
-if os.path.isfile(json_file)==True:
+if os.path.isfile(json_file):
     data = json.load(open(json_file))
 
     if data is not None:
@@ -18,11 +18,11 @@ if os.path.isfile(json_file)==True:
         netatmo = data['netatmo']
 
         payload = {'grant_type': 'password',
-               'username': username,
-               'password': password,
-               'client_id': netatmo['api']['client_id'],
-               'client_secret': netatmo['api']['client_secret'],
-               'scope': 'read_station'}
+                   'username': username,
+                   'password': password,
+                   'client_id': netatmo['api']['client_id'],
+                   'client_secret': netatmo['api']['client_secret'],
+                   'scope': 'read_station'}
 
         print(payload)
 
@@ -49,4 +49,4 @@ if os.path.isfile(json_file)==True:
     # except requests.exceptions.HTTPError as error:
     #     print(error.response.status_code, error.response.text)
 else:
-    print ('json file is not exists. Create it and try again.')
+    print('json file is not exists. Create it and try again.')
