@@ -15,12 +15,12 @@
 		},
 		"modules": [{
 				"type": "indoor",
-				"sn": "i00000",
+				"serial_number": "i00000",
 				"name": "room 1"
 			},
 			{
 				"type": "outdoor",
-				"sn": "h00000",
+				"serial_number": "h00000",
 				"name": "outdoor 1"
 			}
 		]

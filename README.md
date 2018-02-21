@@ -3,6 +3,9 @@ Just one example python project to get data from netatmo system
 
 This project is not yeat usuable or ready production.
 
+[[Status]]
+Not yet ready, missing needed functionality
+
 [[Setup]]
 
 0. Make a plan
