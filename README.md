@@ -1,7 +1,7 @@
 # python-netatmo
 Just one example python project to get data from netatmo system
 
-This project is not yeat usuable or ready production.
+This project is not yet usable or ready production.
 
 [[Status]]
 Not yet ready, missing needed functionality
