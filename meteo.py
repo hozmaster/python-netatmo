@@ -15,6 +15,10 @@ if os.path.isfile(json_file):
         username = data['credentials']['username']
         password = data['credentials']['password']
 
+        if len(password) == 0:
+            print('No password given. exit')
+            exit(255)
+
         weather = data['weather']
 
         payload = {'grant_type': 'password',
