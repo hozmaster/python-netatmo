@@ -4,32 +4,41 @@ from pprint import pprint
 import json
 import os.path
 
-json_file = 'config.json'
-data = None
-if os.path.isfile(json_file):
-    data = json.load(open(json_file))
+class NetAtmoWeather:
 
-    if data is not None:
-        pprint(data)
+    def __init__(self):
+        self.json_file = 'config.json'
+        self.data = None
 
-        username = data['credentials']['username']
-        password = data['credentials']['password']
+    def print_settings(self):
+        weather = self.data['weather']
+        if weather is not None:
+            print(self.data)
+        else:
+            print("no payload found")
 
-        if len(password) == 0:
-            print('No password given. exit')
-            exit(255)
+    def read_settings(self):
 
-        weather = data['weather']
+        if os.path.isfile(self.json_file):
+            self.data = json.load(open(self.json_file))
 
-        payload = {'grant_type': 'password',
-                   'username': username,
-                   'password': password,
-                   'client_id': weather['api']['client_id'],
-                   'client_secret': weather['api']['client_secret'],
-                   'scope': 'read_station'}
+        #
+        # username = data['credentials']['username']
+        #
+        # if len(password) == 0:
+        #     password = input('Enter your password to service: ')
+        #     print('No password given. exit')
+        #     exit(255)
+        #
 
-        print(payload)
 
+        # payload = {'grant_type': 'password',
+        #            'username': username,
+        #            'password': password,
+        #            'client_id': weather['api']['client_id'],
+        #            'client_secret': weather['api']['client_secret'],
+        #            'scope': 'read_station'}
+        #
         # response = requests.post("https://api.netatmo.com/oauth2/token", data=payload)
 
         # response.raise_for_status()
@@ -50,7 +59,12 @@ if os.path.isfile(json_file):
         # data = response.json()["body"]
         # print (data)
 
-    # except requests.exceptions.HTTPError as error:
-    #     print(error.response.status_code, error.response.text)
-else:
-    print('json file is not exists. Create it and try again.')
+        #     # except requests.exceptions.HTTPError as error:
+        #     #     print(error.response.status_code, error.response.text)
+        # else:
+        #     print('json file is not exists. Create it and try again.')
+
+
+atmos = NetAtmoWeather ()
+atmos.read_settings()
+atmos.print_settings()
