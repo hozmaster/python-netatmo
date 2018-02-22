@@ -1,0 +1,175 @@
+{
+  "body": [
+    {
+      "_id": "70:ee:50:2c:eb:98",
+      "place": {
+        "location": [
+          25.549885,
+          64.9973256
+        ],
+        "altitude": 20,
+        "timezone": "Europe\/Helsinki"
+      },
+      "mark": 15,
+      "measures": {
+        "02:00:00:2c:f8:2e": {
+          "res": {
+            "1519296022": [
+              -13.1,
+              84
+            ]
+          },
+          "type": [
+            "temperature",
+            "humidity"
+          ]
+        },
+        "70:ee:50:2c:eb:98": {
+          "res": {
+            "1519296025": [
+              1048.3
+            ]
+          },
+          "type": [
+            "pressure"
+          ]
+        }
+      },
+      "modules": [
+        "02:00:00:2c:f8:2e"
+      ],
+      "module_types": {
+        "02:00:00:2c:f8:2e": "NAModule1"
+      }
+    },
+    {
+      "_id": "70:ee:50:29:1c:44",
+      "place": {
+        "location": [
+          25.495851509398,
+          65.018302446189
+        ],
+        "altitude": 20,
+        "timezone": "Europe\/Helsinki"
+      },
+      "mark": 10,
+      "measures": {
+        "02:00:00:29:02:8c": {
+          "res": {
+            "1519295551": [
+              -12.4,
+              81
+            ]
+          },
+          "type": [
+            "temperature",
+            "humidity"
+          ]
+        },
+        "70:ee:50:29:1c:44": {
+          "res": {
+            "1519295587": [
+              1029.4
+            ]
+          },
+          "type": [
+            "pressure"
+          ]
+        }
+      },
+      "modules": [
+        "02:00:00:29:02:8c"
+      ],
+      "module_types": {
+        "02:00:00:29:02:8c": "NAModule1"
+      }
+    },
+    {
+      "_id": "70:ee:50:04:b5:1c",
+      "place": {
+        "location": [
+          25.514923,
+          65.006875
+        ],
+        "altitude": 14,
+        "timezone": "Europe\/Helsinki"
+      },
+      "mark": 13,
+      "measures": {
+        "02:00:00:04:fc:56": {
+          "res": {
+            "1519295464": [
+              -12.8,
+              96
+            ]
+          },
+          "type": [
+            "temperature",
+            "humidity"
+          ]
+        },
+        "70:ee:50:04:b5:1c": {
+          "res": {
+            "1519295483": [
+              1022.1
+            ]
+          },
+          "type": [
+            "pressure"
+          ]
+        }
+      },
+      "modules": [
+        "02:00:00:04:fc:56"
+      ],
+      "module_types": {
+        "02:00:00:04:fc:56": "NAModule1"
+      }
+    },
+    {
+      "_id": "70:ee:50:12:39:5e",
+      "place": {
+        "location": [
+          25.4893658,
+          65.0064695
+        ],
+        "altitude": 7,
+        "timezone": "Europe\/Helsinki"
+      },
+      "mark": 15,
+      "measures": {
+        "02:00:00:12:56:e4": {
+          "res": {
+            "1519295652": [
+              -11.8,
+              98
+            ]
+          },
+          "type": [
+            "temperature",
+            "humidity"
+          ]
+        },
+        "70:ee:50:12:39:5e": {
+          "res": {
+            "1519295690": [
+              1026.2
+            ]
+          },
+          "type": [
+            "pressure"
+          ]
+        }
+      },
+      "modules": [
+        "02:00:00:12:56:e4"
+      ],
+      "module_types": {
+        "02:00:00:12:56:e4": "NAModule1"
+      }
+    }
+  ],
+  "status": "ok",
+  "time_exec": 0.042294979095459,
+  "time_server": 1519296051
+}

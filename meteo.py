@@ -84,18 +84,19 @@ class NetAtmoWeather:
 
             params = {
                 'access_token': access_token,
-                'device_id': device_id
+                'module_id': device_id
             }
 
             try:
                 response = requests.post("https://api.netatmo.com/api/getstationsdata", params=params)
                 response.raise_for_status()
                 data = response.json()["body"]
+
             except requests.exceptions.HTTPError as error:
                 print(error.response.status_code, error.response.text)
 
         sys.exit(0)
 
+
 atmos = NetAtmoWeather ()
 atmos.get_weather_data()
-
