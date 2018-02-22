@@ -48,11 +48,10 @@ class NetAtmoWeather:
         else:
             device_cat = '03'
 
-        s = serial_number[1:]
-        tuple = re.findall('..', s)
+        tuple = re.findall('..', serial_number[1:])
+        mac = device_cat + ":00:00:"+":".join(tuple)
 
-        return s
-
+        return mac
 
     def read_settings(self):
 
@@ -69,13 +68,6 @@ class NetAtmoWeather:
                 isvalid=lambda v: len(v) >= 8)
 
         weather = self.data['weather']
-        modules = self.data['modules']
-        device_id = self.make_device_id(modules[0]['sn'])
-
-        print (device_id)
-
-        # for now, disable netatmo http request
-        self.data['credentials']['password'] = None
 
         if self.data['credentials']['password'] is not None:
 
@@ -85,74 +77,24 @@ class NetAtmoWeather:
 
             response = requests.post("https://api.netatmo.com/oauth2/token", payload)
 
-            print(response)
-
             access_token = response.json()["access_token"]
-            refresh_token = response.json()["refresh_token"]
-            scope = response.json()["scope"]
 
-            print('Access token : ' + access_token)
-            print('Refresh token: ' + refresh_token)
-            print('Scope        : ' + scope[0])
-
-            modules = self.data['modules']
-
-            device_id = self.make_device_id (modules[0]['sn'])
+            modules = self.data['weather']['modules']
+            device_id = self.make_device_id(modules[0]['serial_number'])
 
             params = {
                 'access_token': access_token,
                 'device_id': device_id
             }
 
-            #
-            # try:
-            #     response = requests.post("https://api.netatmo.com/api/getstationsdata", params=params)
-            #     response.raise_for_status()
-            #     data = response.json()["body"]
-            # except requests.exceptions.HTTPError as error:
-            #     print(error.response.status_code, error.response.text)
+            try:
+                response = requests.post("https://api.netatmo.com/api/getstationsdata", params=params)
+                response.raise_for_status()
+                data = response.json()["body"]
+            except requests.exceptions.HTTPError as error:
+                print(error.response.status_code, error.response.text)
 
         sys.exit(0)
-
-
-# if __name__ == '__main__':
-#     args = sys.argv
-#
-#     NetAtmoWeather().get_weather_data()
-
-        #
-        # username = data['credentials']['username']
-        #
-        # if len(password) == 0:
-        #     password = input('Enter your password to service: ')
-        #     print('No password given. exit')
-        #     exit(255)
-        #
-
-
-        # payload = {'grant_type': 'password',
-        #            'username': username,
-        #            'password': password,
-        #            'client_id': weather['api']['client_id'],
-        #            'client_secret': weather['api']['client_secret'],
-        #            'scope': 'read_station'}
-        #
-        # response = requests.post("https://api.netatmo.com/oauth2/token", data=payload)
-
-        # params = {
-        #     'access_token': access_token,
-        #     'device_id': '70:ee:XX:XX:XX:XX'
-        # }
-        # response = requests.post("https://api.netatmo.com/api/getstationsdata", params=params)
-        # response.raise_for_status()
-        # data = response.json()["body"]
-        # print (data)
-
-        #     # except requests.exceptions.HTTPError as error:
-        #     #     print(error.response.status_code, error.response.text)
-        # else:
-        #     print('json file is not exists. Create it and try again.')
-
 
 atmos = NetAtmoWeather ()
 atmos.get_weather_data()
